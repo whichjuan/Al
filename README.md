@@ -1,2 +1,2 @@
-# Al
+# Atlas
 Geography game - Angular JS Demo
