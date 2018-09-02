@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="app5">
+<head>
+	<title>Three Two Juan | Blog & Portfolio</title>
+	
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	
+	<!-- Boostrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<!-- Custom styles for this template -->
+    <link href="styles/cover.css" rel="stylesheet">
+
+
+	<!-- No neet to translate page, it's in english -->
+	<meta charset="UTF-8">
+	<meta name="google" content="notranslate">
+	<meta http-equiv="Content-Language" content="en">
+
+	<!-- ng-cloack -->
+	<style>
+	[ng\:cloak], [ng-cloak], .ng-cloak {display: none;}
+  	</style>
+
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90750494-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-90750494-2');
+	</script>
+
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0F2433">
+    <div class="container">
+      <a class="navbar-brand" href="#">Juan Felipe Cardona</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://medium.com/@threetwojuan">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/whichjuan">Github</a>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Web Apps <span class="sr-only">(current)</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item active" href="countries.html">Atlas - Angular.JS</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Speed Reading - Angular.JS</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="mr-auto">
+              <a href="#" class="btn btn-outline-light my-2 my-sm-0">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+  <!-- Jumbotron -->
+      <main role="main" class="container mt-3">
+        <div class="jumbotron">
+          
+    	  <div id="app" ng-controller="countryListCtrl">
+	      <!-- Image of right country -->
+
+	      <h1>Can you guess the country?</h1>
+	  
+	      <img ng-src="{{countries[guesses[rightCountry]].image}}" style="max-height: 200px">
+	      <br>
+
+
+	      <h2>{{response}}</h2>
+	      <!-- buttons for choices -->
+	      <button class="btn btn-md btn-dark" ng-class="class" ng-click="checkAnswer(0)">{{countries[guesses[0]].country}}</button>
+	      <button class="btn btn-md btn-dark" ng-class="class" ng-click="checkAnswer(1)">{{countries[guesses[1]].country}}</button>
+	      <br>
+	      <button class="btn btn-md btn-dark mt-1" ng-class="class" ng-click="checkAnswer(2)">{{countries[guesses[2]].country}}</button>
+	      <button class="btn btn-md btn-dark mt-1" ng-class="class" ng-click="checkAnswer(3)">{{countries[guesses[3]].country}}</button>
+	      <br>
+	      <button class="btn btn-lg btn-primary mt-2" ng-click="pushRandomNumbers(getRandomNumber()); pickCountry(); clearResponse()">Go!</button>
+	      </div> <!-- End of app -->
+
+        </div>
+      </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/countriesApp.js"></script>
+
+</body>
+</html>
